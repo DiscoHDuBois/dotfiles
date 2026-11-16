@@ -11,6 +11,7 @@ My current configuration for Fedora GNOME.
 ## Structure
 
 - `install.sh` → copies `home/` and `config/` into place, backing up what it overwrites
+- `sync.sh` → the opposite: copies the system's current files back into the repo, then runs `gnome/export.sh`
 - `home/` → files that go in `~/` (`.zshrc`, `.bashrc`, `.bash_profile`, `.bash_logout`)
 - `config/` → files that go in `~/.config/`
   - `kitty/` — terminal emulator
@@ -38,7 +39,14 @@ My current configuration for Fedora GNOME.
 
 Both scripts back up what they overwrite in `~/.dotfiles-backup/`: the replaced files (same paths as under `~`) and a full `dconf dump /` (put it back with `dconf load / < ~/.dotfiles-backup/dconf-….ini`).
 
-To update the copy after changing settings: `./gnome/export.sh`
+## Update the repo after changing the system
+
+```sh
+./sync.sh    # ~ → home/, ~/.config → config/, dconf → gnome/dconf/
+git diff     # review, then commit
+```
+
+Only files already in the repo are updated (new files must be added by hand), files with uncommitted edits in the repo are left alone, and lines that look like credentials are flagged.
 
 ## GNOME shortcuts (Tiling Shell, i3-style)
 
