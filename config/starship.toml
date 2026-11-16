@@ -1,0 +1,198 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+palette = "inspo"
+add_newline = true
+
+# Formato
+format = """
+[](fg:purple)\
+$os\
+[](fg:purple bg:cyan)\
+$directory\
+[](fg:cyan bg:pink)\
+$git_branch$git_status\
+[](fg:pink bg:green)\
+$c$cpp$rust$golang$nodejs$bun$deno$java$kotlin$python$lua$php$ruby$zig$dotnet\
+[](fg:green bg:yellow)\
+$container$docker_context$conda$nix_shell\
+[](fg:yellow bg:slate)\
+$time\
+[](fg:slate)\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Palette
+[palettes.inspo]
+base   = "#2c2e3a"
+purple = "#ba94f1"
+cyan   = "#8ae4fd"
+pink   = "#ff77c1"
+green  = "#57f385"
+yellow = "#e8be6d"
+slate  = "#646fa5"
+navy   = "#1f2a4d"
+mute   = "#6a6f8e"
+lambda = "#6ee79a"
+red    = "#f2778d"
+
+# Sistema e utente
+[os]
+disabled = false
+style = "bg:purple fg:base"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Fedora = " "
+Arch   = " "
+Linux  = " "
+
+[username]
+show_always = true
+style_user = "bg:purple fg:base"
+style_root = "bg:purple fg:red bold"
+format = "[$user ]($style)"
+
+# Cartella
+[directory]
+style = "bg:cyan fg:base"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+read_only = " "
+read_only_style = "bg:cyan fg:red"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+
+[directory.substitutions]
+".config"   = ""
+"github"    = "hub"
+"Documenti" = "\U000f0219"
+"Scaricati" = ""
+"Immagini"  = ""
+"Musica"    = ""
+"Video"     = ""
+
+# Git
+[git_branch]
+symbol = ""
+style = "bg:pink fg:base"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:pink fg:base"
+format = "[($all_status$ahead_behind )]($style)"
+
+# Linguaggi
+[c]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[cpp]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[nodejs]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[bun]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[deno]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[java]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[kotlin]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version)(\\($virtualenv\\)) ]($style)"
+
+[lua]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[php]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[ruby]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[zig]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+[dotnet]
+symbol = ""
+style = "bg:green fg:base"
+format = "[ $symbol( $version) ]($style)"
+
+# Ambienti
+[container]
+symbol = "\U000f0868"
+style = "bg:yellow fg:base"
+format = "[ $symbol $name ]($style)"
+
+[docker_context]
+symbol = ""
+style = "bg:yellow fg:base"
+format = "[ $symbol $context ]($style)"
+
+[conda]
+symbol = "\U000f0870"
+style = "bg:yellow fg:base"
+format = "[ $symbol $environment ]($style)"
+
+[nix_shell]
+symbol = ""
+style = "bg:yellow fg:base"
+format = "[ $symbol $state ]($style)"
+
+# Ora e durata
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:slate fg:navy"
+format = "[  $time ]($style)"
+
+[cmd_duration]
+min_time = 2_000
+show_milliseconds = true
+style = "fg:mute"
+format = "[   in $duration]($style)"
+
+# Carattere del prompt
+[character]
+success_symbol = "[λ](bold fg:lambda) [❯](bold fg:lambda)"
+error_symbol   = "[λ](bold fg:red) [❯](bold fg:red)"
+vimcmd_symbol  = "[λ](bold fg:purple) [❮](bold fg:purple)"
