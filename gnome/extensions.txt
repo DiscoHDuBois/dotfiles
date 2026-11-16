@@ -1,0 +1,10 @@
+appindicatorsupport@rgcjonas.gmail.com
+CustomizeClockOnLockScreen@pratap.fastmail.fm
+logomenu@aryan_k
+dash2dock-lite@icedman.github.com
+space-bar@luchrioh
+Vitals@CoreCoding.com
+rounded-window-corners@fxgn
+user-theme@gnome-shell-extensions.gcampax.github.com
+blur-my-shell@aunetx
+tilingshell@ferrarodomenico.com
