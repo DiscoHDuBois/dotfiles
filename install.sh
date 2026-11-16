@@ -26,6 +26,7 @@ install_dir() { # install_dir <src> <dest>
 install_dir home "$HOME"
 install_dir config "${XDG_CONFIG_HOME:-$HOME/.config}"
 rm -rf "$HOME/.cache/fastfetch/images" # regenerate fastfetch's logo cache
+git config core.hooksPath .githooks    # gitleaks pre-commit hook (blocks secrets)
 
 if ((saved)); then
   echo "Installed. $saved overwritten file(s) saved in $backup"
