@@ -12,6 +12,7 @@ My current configuration for Fedora GNOME.
 
 - `install.sh` → copies `home/` and `config/` into place, backing up what it overwrites
 - `sync.sh` → the opposite: copies the system's current files back into the repo, then runs `gnome/export.sh`
+- `.githooks/pre-commit` → blocks commits that contain secrets ([gitleaks](https://github.com/gitleaks/gitleaks), `sudo dnf install gitleaks`); enabled by `install.sh` (`git config core.hooksPath .githooks`)
 - `home/` → files that go in `~/` (`.zshrc`, `.bashrc`, `.bash_profile`, `.bash_logout`)
 - `config/` → files that go in `~/.config/`
   - `kitty/` — terminal emulator
@@ -39,14 +40,14 @@ My current configuration for Fedora GNOME.
 
 Both scripts back up what they overwrite in `~/.dotfiles-backup/`: the replaced files (same paths as under `~`) and a full `dconf dump /` (put it back with `dconf load / < ~/.dotfiles-backup/dconf-….ini`).
 
-## Update the repo after changing the system
+## Update the repository after changing the system
 
 ```sh
 ./sync.sh    # ~ → home/, ~/.config → config/, dconf → gnome/dconf/
 git diff     # review, then commit
 ```
 
-Only files already in the repo are updated (new files must be added by hand), files with uncommitted edits in the repo are left alone, and lines that look like credentials are flagged.
+Only files already in the repository are updated (new files must be added by hand), files with uncommitted edits in the repo are left alone, and gitleaks flags possible secrets. The pre-commit hook then blocks them for real; for a false positive, end the line with `# gitleaks:allow`.
 
 ## GNOME shortcuts (Tiling Shell, i3-style)
 
