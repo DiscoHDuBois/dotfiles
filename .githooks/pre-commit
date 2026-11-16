@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Block the commit if the staged changes contain secrets (gitleaks).
+# Enabled with: git config core.hooksPath .githooks (install.sh does it)
+# False positive? Add `gitleaks:allow` at the end of the line, or its fingerprint to .gitleaksignore.
+# Skip once, on purpose: git commit --no-verify
+set -euo pipefail
+
+if ! command -v gitleaks >/dev/null; then
+  echo "pre-commit: gitleaks not installed (sudo dnf install gitleaks). Commit blocked." >&2
+  exit 1
+fi
+
+if ! gitleaks git --pre-commit --staged --redact --no-banner -v; then
+  echo >&2
+  echo "pre-commit: possible secrets in the staged changes (above). Commit blocked." >&2
+  echo "Remove them with: git restore --staged <file>, then fix the file." >&2
+  exit 1
+fi

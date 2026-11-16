@@ -50,11 +50,14 @@ if ((${#conflicts[@]})); then
   echo "   Commit/restore the repo version, or run ./install.sh, then sync again."
 fi
 
-# Warn about lines that look like credentials in what is about to be committed
-secrets='(api[_-]?key|token|secret|passw(or)?d|BEGIN [A-Z ]*PRIVATE KEY|ghp_[A-Za-z0-9]|github_pat_|AKIA[0-9A-Z]{8}|sk-[A-Za-z0-9]{16})'
-if git diff -U0 -- home config gnome | grep -E '^\+[^+]' | grep -iE "$secrets"; then
-  echo
-  echo "!! WARNING: the lines above look like credentials. Check them before committing."
+# Early warning on secrets in the uncommitted changes (the pre-commit hook blocks them anyway)
+if command -v gitleaks >/dev/null; then
+  if ! gitleaks git --pre-commit --redact --no-banner -v -l error; then
+    echo
+    echo "!! WARNING: gitleaks found possible secrets (above). The commit will be blocked."
+  fi
+else
+  echo "!! gitleaks not installed: secrets not checked (sudo dnf install gitleaks)"
 fi
 
 echo
