@@ -1,0 +1,51 @@
+/* Palette "inspo" — libadwaita (GTK4, 1.6+) */
+
+:root {
+  /* Window and content */
+  --window-bg-color: #2c2e3a;
+  --window-fg-color: #cdd2ea;
+  --view-bg-color: #262833;
+  --view-fg-color: #cdd2ea;
+
+  /* Header bar */
+  --headerbar-bg-color: #2c2e3a;
+  --headerbar-fg-color: #cdd2ea;
+  --headerbar-backdrop-color: #2c2e3a;
+  --headerbar-shade-color: rgb(0 0 0 / 36%);
+
+  /* Sidebar */
+  --sidebar-bg-color: #252731;
+  --sidebar-fg-color: #cdd2ea;
+  --sidebar-backdrop-color: #292b36;
+  --sidebar-shade-color: rgb(0 0 0 / 25%);
+  --secondary-sidebar-bg-color: #282a35;
+  --secondary-sidebar-fg-color: #cdd2ea;
+  --secondary-sidebar-backdrop-color: #2b2d38;
+
+  /* Popovers, dialogs, thumbnails */
+  --popover-bg-color: #333544;
+  --popover-fg-color: #cdd2ea;
+  --dialog-bg-color: #333544;
+  --dialog-fg-color: #cdd2ea;
+  --thumbnail-bg-color: #333544;
+  --thumbnail-fg-color: #cdd2ea;
+
+  /* Accent */
+  --accent-bg-color: #ba94f1;
+  --accent-fg-color: #2c2e3a;
+  --accent-color: #ba94f1;
+
+  /* States */
+  --destructive-bg-color: #f2778d;
+  --destructive-fg-color: #2c2e3a;
+  --destructive-color: #f2778d;
+  --success-bg-color: #6ee79a;
+  --success-fg-color: #2c2e3a;
+  --success-color: #6ee79a;
+  --warning-bg-color: #e8be6d;
+  --warning-fg-color: #2c2e3a;
+  --warning-color: #e8be6d;
+  --error-bg-color: #f2778d;
+  --error-fg-color: #2c2e3a;
+  --error-color: #f2778d;
+}

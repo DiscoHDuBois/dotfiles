@@ -1,0 +1,44 @@
+/* Palette "inspo" — GTK3 (adw-gtk3-dark) */
+
+/* Window and content */
+@define-color window_bg_color #2c2e3a;
+@define-color window_fg_color #cdd2ea;
+@define-color view_bg_color #262833;
+@define-color view_fg_color #cdd2ea;
+
+/* Header bar */
+@define-color headerbar_bg_color #2c2e3a;
+@define-color headerbar_fg_color #cdd2ea;
+@define-color headerbar_backdrop_color #2c2e3a;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
+
+/* Sidebar */
+@define-color sidebar_bg_color #252731;
+@define-color sidebar_fg_color #cdd2ea;
+@define-color sidebar_backdrop_color #292b36;
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
+
+/* Popovers, dialogs, cards */
+@define-color popover_bg_color #333544;
+@define-color popover_fg_color #cdd2ea;
+@define-color dialog_bg_color #333544;
+@define-color dialog_fg_color #cdd2ea;
+
+/* Accent */
+@define-color accent_bg_color #ba94f1;
+@define-color accent_fg_color #2c2e3a;
+@define-color accent_color #ba94f1;
+
+/* States */
+@define-color destructive_bg_color #f2778d;
+@define-color destructive_fg_color #2c2e3a;
+@define-color destructive_color #f2778d;
+@define-color success_bg_color #6ee79a;
+@define-color success_fg_color #2c2e3a;
+@define-color success_color #6ee79a;
+@define-color warning_bg_color #e8be6d;
+@define-color warning_fg_color #2c2e3a;
+@define-color warning_color #e8be6d;
+@define-color error_bg_color #f2778d;
+@define-color error_fg_color #2c2e3a;
+@define-color error_color #f2778d;
