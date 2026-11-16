@@ -10,6 +10,7 @@ My current configuration for Fedora GNOME.
 
 ## Structure
 
+- `install.sh` → copies `home/` and `config/` into place, backing up what it overwrites
 - `home/` → files that go in `~/` (`.zshrc`, `.bashrc`, `.bash_profile`, `.bash_logout`)
 - `config/` → files that go in `~/.config/`
   - `kitty/` — terminal emulator
@@ -29,14 +30,13 @@ My current configuration for Fedora GNOME.
 ## Restore
 
 ```sh
-cp -a home/. ~/
-cp -a config/. ~/.config/
-rm -rf ~/.cache/fastfetch/images   # regenerate fastfetch's logo cache
+./install.sh         # home/ → ~, config/ → ~/.config
 
 # GNOME: install the extensions in gnome/extensions.txt first, then
-dconf dump / > ~/dconf-backup.ini   # backup
-./gnome/restore.sh
+./gnome/restore.sh   # dconf/*.ini → dconf
 ```
+
+Both scripts back up what they overwrite in `~/.dotfiles-backup/`: the replaced files (same paths as under `~`) and a full `dconf dump /` (put it back with `dconf load / < ~/.dotfiles-backup/dconf-….ini`).
 
 To update the copy after changing settings: `./gnome/export.sh`
 
