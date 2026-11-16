@@ -3,7 +3,7 @@
 My current configuration for Fedora GNOME.
 
 <p align="center">
-  <img src="imgs/screeeen.png" width="600">
+  <img src="imgs/screeeen.png" width="800">
 </p>
 
 <p align="center"><em>A sneak peek</em></p>
