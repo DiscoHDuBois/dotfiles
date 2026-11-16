@@ -1,6 +1,6 @@
 # Dotfiles
 
-My current configuration.
+My current configuration for Fedora GNOME.
 
 ## Structure
 
