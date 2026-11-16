@@ -2,6 +2,12 @@
 
 My current configuration for Fedora GNOME.
 
+<p align="center">
+  <img src="imgs/screeeen.png" width="600">
+</p>
+
+<p align="center"><em>A sneak peek</em></p>
+
 ## Structure
 
 - `home/` → files that go in `~/` (`.zshrc`, `.bashrc`, `.bash_profile`, `.bash_logout`)
