@@ -1,6 +1,8 @@
-# Dotfiles
+# dotfiles
 
-My current configuration for Fedora GNOME.
+<p alingn="center"><em>My current configuration for Fedora GNOME. I tried to recreate a nostalgic rice that looks like my i3 Arch (as much as possibile on GNOME)
+</em></p>
+
 
 <p align="center">
   <img src="imgs/screeeen.png" width="800">
