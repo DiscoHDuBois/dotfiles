@@ -4,7 +4,7 @@
 </em></p>
 <p align = "center"><em>(as much as possible on GNOME)</em></p>
 
-![Linux](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white) ![Lua](https://img.shields.io/badge/Lua-000000?style=for-the-badge&logo=lua&logoColor=white) ![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white) ![CSS](https://img.shields.io/badge/Css-000000?style=for-the-badge&logo=css&logoColor=white)
 
 <p align="center">
   <img src="imgs/screeeen.png" width="800">
