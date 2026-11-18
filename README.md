@@ -4,6 +4,8 @@
 </em></p>
 <p align = "center"><em>(as much as possible on GNOME)</em></p>
 
+![Linux](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white)
+
 <p align="center">
   <img src="imgs/screeeen.png" width="800">
 </p>
